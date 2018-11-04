@@ -3,6 +3,10 @@ function fancyBlockQuotes() {
   formatQuote('blockquote');
 }
 
+function fullHeightContainer() {
+  $('.container').css('padding-bottom', '5000px');
+}
+
 function formatQuote(selector) {
   jQuery("body " + selector).addClass('hover-effect')
 }
@@ -35,4 +39,5 @@ function increasePadding(selector, newPadding) {
 
 $(document).ready(function() {
   fancyBlockQuotes();
+  fullHeightContainer();
 })
