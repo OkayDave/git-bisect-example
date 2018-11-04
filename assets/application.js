@@ -1,5 +1,10 @@
 function fancyBlockQuotes() {
   formatFirstLetters('p.quote');
+  formatQuote('blockquote');
+}
+
+function formatQuote(selector) {
+  jQuery("body " + selector).addClass('hover-effect')
 }
 
 function formatFirstLetters(selector) {
