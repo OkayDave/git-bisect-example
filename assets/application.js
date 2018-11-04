@@ -6,6 +6,7 @@ function formatFirstLetters(selector) {
   colour = jQuery('body').css('background-color');
   window.letters = wrapFirstLetters('body ' + selector).join('');
   setBackgroundColour('body, ' + selector + " .first-char", window.letters);
+  increasePadding('body ' + selector + " .first-char", '5px');
 }
 
 function wrapFirstLetters(selector) {
@@ -21,6 +22,10 @@ function wrapFirstLetters(selector) {
 
 function setBackgroundColour(selector, colour) {
   $(selector).css('background-color', colour);
+}
+
+function increasePadding(selector, newPadding) {
+  $(selector).css('padding-left', newPadding).css('padding-right', newPadding);
 }
 
 $(document).ready(function() {
