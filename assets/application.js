@@ -1,20 +1,26 @@
 function fancyBlockQuotes() {
-  formatFirstLetters();
+  formatFirstLetters('p.quote');
 }
 
-function formatFirstLetters() {
-  window.letters = wrapFirstLetters();
+function formatFirstLetters(selector) {
+  colour = jQuery('body').css('background-color');
+  window.letters = wrapFirstLetters('body ' + selector).join('');
+  setBackgroundColour('body, ' + selector + " .first-char", window.letters);
 }
 
-function wrapFirstLetters() {
+function wrapFirstLetters(selector) {
   letters = [];
-  $('p.quote').each(function(i) {
+  $(selector).each(function(i) {
     var chars = $(this).text().split('');
-    letters << chars[0];
+    letters.push(chars[0]);
     chars[0] = "<span class='first-char'>" + chars[0] + "</span>";
     $(this).html(chars.join(''));
   });
   return letters;
+}
+
+function setBackgroundColour(selector, colour) {
+  $(selector).css('background-color', colour);
 }
 
 $(document).ready(function() {
