@@ -18,3 +18,9 @@ body {
   margin-top: 0;
 }
 
+hr {
+  width: 25%;
+  border-top: 5px dotted gray;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
